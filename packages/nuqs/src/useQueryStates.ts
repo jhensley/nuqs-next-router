@@ -1,8 +1,6 @@
 import {
-  ReadonlyURLSearchParams,
   useRouter,
-  useSearchParams
-} from 'next/navigation.js' // https://github.com/47ng/nuqs/discussions/352
+} from 'next/router.js' // https://github.com/47ng/nuqs/discussions/352
 import React from 'react'
 import { debug } from './debug'
 import type { Nullable, Options } from './defs'
@@ -70,8 +68,7 @@ export function useQueryStates<KeyMap extends UseQueryStatesKeysMap>(
   type V = Values<KeyMap>
   const keys = Object.keys(keyMap).join(',')
   const router = useRouter()
-  // Not reactive, but available on the server and on page load
-  const initialSearchParams = useSearchParams()
+  const initialSearchParams = router.isReady && router.query ? new URLSearchParams(router.query as Record<string, string>) : new URLSearchParams();
   const [internalState, setInternalState] = React.useState<V>(() =>
     parseMap(keyMap, initialSearchParams ?? new URLSearchParams())
   )
@@ -175,7 +172,7 @@ export function useQueryStates<KeyMap extends UseQueryStatesKeysMap>(
 
 function parseMap<KeyMap extends UseQueryStatesKeysMap>(
   keyMap: KeyMap,
-  searchParams: URLSearchParams | ReadonlyURLSearchParams
+  searchParams: URLSearchParams
 ) {
   return Object.keys(keyMap).reduce((obj, key) => {
     const { defaultValue, parse } = keyMap[key]!

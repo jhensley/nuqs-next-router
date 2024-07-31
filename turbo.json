@@ -11,23 +11,9 @@
     "nuqs#build": {
       "outputs": ["dist/**", "size.json"]
     },
-    "e2e#build": {
-      "outputs": [".next/**", "!.next/cache/**", "cypress/**"],
-      "dependsOn": ["^build"],
-      "env": ["BASE_PATH", "WINDOW_HISTORY_SUPPORT", "E2E_NO_CACHE_ON_RERUN"]
-    },
-    "docs#build": {
-      "outputs": [".next/**", "!.next/cache/**"],
-      "dependsOn": ["^build"],
-      "env": ["VERCEL_ENV"]
-    },
     "nuqs#test": {
       "outputs": ["dist/**", "coverage/**"],
       "dependsOn": ["build"]
-    },
-    "e2e#test": {
-      "dependsOn": ["build"],
-      "env": ["BASE_PATH", "WINDOW_HISTORY_SUPPORT", "E2E_NO_CACHE_ON_RERUN"]
     }
   }
 }

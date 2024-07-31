@@ -1,16 +1,15 @@
 {
-  "name": "nuqs-monorepo",
+  "name": "nuqs-next-router-monorepo",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "author": {
-    "name": "François Best",
-    "email": "contact@francoisbest.com",
-    "url": "https://francoisbest.com"
+    "name": "Jonathan Hensley",
+    "email": "jhensley2@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/47ng/nuqs"
+    "url": "https://github.com/jhensley/nuqs-next-router"
   },
   "scripts": {
     "dev": "turbo run dev",

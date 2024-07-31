@@ -1,16 +1,15 @@
 {
-  "name": "nuqs",
-  "version": "0.0.0-semantically-released",
+  "name": "nuqs-next-router",
+  "version": "1.0.0",
   "description": "Type-safe search params state manager for Next.js - Like React.useState, but stored in the URL query string",
   "license": "MIT",
   "author": {
-    "name": "François Best",
-    "email": "contact@francoisbest.com",
-    "url": "https://francoisbest.com"
+    "name": "Jonathan Hensley",
+    "email": "jhensley2@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/47ng/nuqs.git",
+    "url": "git+https://github.com/jhensley/nuqs-next-router.git",
     "directory": "packages/nuqs"
   },
   "homepage": "https://nuqs.47ng.com",

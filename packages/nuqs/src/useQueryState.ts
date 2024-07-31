@@ -1,4 +1,4 @@
-import { useRouter, useSearchParams } from 'next/navigation.js' // https://github.com/47ng/nuqs/discussions/352
+import { useRouter } from 'next/router.js' // https://github.com/47ng/nuqs/discussions/352
 import React from 'react'
 import { debug } from './debug'
 import type { Options } from './defs'
@@ -224,7 +224,7 @@ export function useQueryState<T = string>(
 ) {
   const router = useRouter()
   // Not reactive, but available on the server and on page load
-  const initialSearchParams = useSearchParams()
+  const initialSearchParams = router.isReady && router.query ? new URLSearchParams(router.query as Record<string, string>) : new URLSearchParams();
   const [internalState, setInternalState] = React.useState<T | null>(() => {
     const queueValue = getQueuedValue(key)
     const urlValue = initialSearchParams?.get(key) ?? null
