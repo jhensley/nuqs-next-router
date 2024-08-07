@@ -1,5 +1,5 @@
 export function renderQueryString(search: URLSearchParams) {
-  if (search.size === 0) {
+  if (search.toString() === new URLSearchParams().toString() || search.size === 0) {
     return ''
   }
   const query: string[] = []

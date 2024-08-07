@@ -1,6 +1,6 @@
 {
   "name": "nuqs-next-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Type-safe search params state manager for Next.js - Like React.useState, but stored in the URL query string",
   "license": "MIT",
   "author": {

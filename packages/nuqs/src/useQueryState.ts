@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router.js' // https://github.com/47ng/nuqs/discussions/352
+import { useRouter } from 'next/router'
 import React from 'react'
 import { debug } from './debug'
 import type { Options } from './defs'

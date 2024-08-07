@@ -8,6 +8,9 @@
     "build": {
       "dependsOn": ["^build"]
     },
+    "test": {
+      "dependsOn": ["build"]
+    },
     "nuqs#build": {
       "outputs": ["dist/**", "size.json"]
     },
